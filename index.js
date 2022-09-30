@@ -9,6 +9,9 @@ const logger = require("morgan");
 const dotenv = require('dotenv');
 dotenv.config();
 
+const dbConfig = require("./service/dbConfig");
+dbConfig();
+
 app.use(cors());
 app.use(logger("dev"));
 app.use(express.json({ limit: "50mb" }));
