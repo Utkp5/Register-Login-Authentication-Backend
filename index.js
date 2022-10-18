@@ -4,7 +4,6 @@ const PORT = process.env.PORT || 5000;
 const cors = require('cors');
 const logger = require("morgan");
 const userRoutes = require("./routes/userRoutes");
-const authRoutes = require("./routes/auth");
 
 
 const dotenv = require('dotenv');
@@ -20,7 +19,7 @@ app.use(express.urlencoded({ limit: "50mb", extended: false }));
 
 
 
-app.use("/api/user", userRoutes);
+app.use("/api", userRoutes);
 
 
 
